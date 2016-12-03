@@ -4,6 +4,7 @@ doc
 data
 emoji
 .tmp
+.idea
 .sass-cache
 .ftppass
 secret.json
