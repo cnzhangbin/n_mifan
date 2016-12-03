@@ -1,0 +1,20 @@
+<div class="square-page page-mod container clearfix">
+
+	<div class="row col-xs-12 col-sm-8">
+		<div class="main">
+			
+			<div class="square-top sd-card">
+				<h5>米饭广场 - 大家都在问：</h5>
+				<ul ng-show="everyoneAskLists">
+					<li ng-repeat="news in everyoneAskLists" class="qa-mod feed-mod hide-action" ng-include="'views/module/feed-mod.html'"></li>
+				</ul>
+			</div>
+
+			<div class="feed-wrap">
+				<div ng-include="'views/square/feeds.html'"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row col-xs-12 col-sm-4" ng-include="'views/square/side.html'"></div>
+</div>

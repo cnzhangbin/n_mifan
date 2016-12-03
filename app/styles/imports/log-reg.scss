@@ -1,0 +1,253 @@
+﻿.login-page,
+.register-page{
+
+	padding-top: 3em;
+	padding-bottom: 3em;
+	max-width: 800px !important;
+	_width: 800px !important;
+	margin-left: auto;
+	margin-right: auto;
+
+	h3,
+	h4,
+	h5{
+
+		font-weight: 400;
+	}
+
+	h3{
+		font-size: 2em;
+	}
+
+	h4{
+		margin: 1.2em 0 2em;
+		color: #555;
+	}
+
+	h5{
+		color: #888;
+	}
+
+	// max-width: 600px;
+	// margin-left: auto;
+	// margin-right: auto;
+
+
+	form{
+		
+	}
+
+	.self,
+	.others{
+		padding-top: 1em;
+	}
+
+	.login-form{
+		.form-group{
+			margin-right: .6em;
+		}
+		.btn[type="submit"]{
+			width: 4em;
+		}
+	}
+
+
+	.error-msg{
+		visibility: hidden;
+		height: 1.2em;
+		color: $error-color;
+		margin-top: .6em;
+		&.active{
+			visibility: visible;
+		}
+	}
+
+}
+
+.login-page{
+	.sns,
+	.self{
+		margin-top: 2em;
+	}
+
+	h5{
+		margin-bottom: 1.6em;
+	}
+
+}
+
+.register-page{
+
+
+
+	.reg-form{
+		max-width: 300px;
+		padding-right: 28px;
+		border-right: 1px solid $light-gray;
+		.btn[type="submit"]{
+			width: 100%;
+		}
+	}
+
+	.sns-login{
+		a{
+			min-width: 0;
+			i{
+				margin: 10px;
+			}
+			span{
+				display: none;
+			}
+		}
+	}
+
+	.self{
+		float: left;
+	}
+	.others{
+		float: left;
+		margin-left: 28px;
+	}
+}
+
+
+.sns-login{
+
+	i,
+	.glyphicon-refresh{
+		float: left;
+		margin: 12px 10px;
+	}
+
+	.glyphicon-refresh{
+		margin-top: 16px;
+	}
+
+	a{
+		display: inline-block;
+		color: $white;
+		margin-right: 1em;
+		font-size: 1.2em;
+		border-radius: 2px;
+		min-width: 160px;
+		position: relative;
+
+		span{
+			float: left;
+			padding-left: 25px;
+			border-left: 1px solid $light-gray;
+			line-height: 26px;
+			margin: 12px 0;
+			padding-left: 1.2em;
+			margin-left: 40px;
+		}
+		&:hover,
+		&:active{
+			opacity: .9;
+		}
+	}
+
+	.weibo{
+		background-color: #ee7d59;
+	}
+	.qq{
+		background-color: #50b5d3;
+	}
+	.douban{
+		background-color: #65c100;
+	}
+}
+
+
+// phone
+
+@media (max-width: $screen-xs-max) {
+	.login-page,
+	.register-page{
+
+		padding-top: 0;
+		padding-bottom: 2em;
+
+		h4{
+			margin: 1em 0 1em
+		}
+
+		h5{
+			margin-bottom: 1em;
+		}
+
+		input{
+			font-size: 1em !important;
+		}
+
+		.login-form{
+			.form-group{
+				margin-right: 0;
+			}
+		}
+
+	}
+
+	.login-page{
+		.login-form{
+			.btn[type="submit"]{
+				width: 100%;
+			}
+		}
+
+		.sns,
+		.self{
+			margin-top: 0;
+		}
+
+		.self{
+			padding-top: .2em;
+		}
+	}
+
+	.register-page{
+		.self,
+		.others{
+			float: none;
+		}
+
+		.self{
+			padding-top: .2em;
+		}
+		.others{
+			margin-left: 0;
+			padding-top: 0;
+		}
+
+		.reg-form{
+			padding-right: 0;
+			border-right: none;
+		}
+	}
+
+	.sns-login{
+		i{
+			margin: 10px;
+		}
+		a{
+			min-width: 0;
+			margin-right: .4em;
+			opacity: .9;
+			&:active{
+				opacity: 1;
+			}
+			span{
+				display: none;
+			}
+		}
+	}
+}
+
+
+@media (max-width: $screen-xs) {
+  .login-page,
+	.register-page{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}

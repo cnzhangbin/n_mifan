@@ -1,0 +1,91 @@
+.msg-page{
+	.main{
+
+  	max-width: 600px;
+  	margin: 0 auto;
+  	padding: 10px 8px;
+  	padding-bottom: 2em;
+  	min-height: 100px;
+  	position: relative;
+
+  	.lead{
+  		//background-color: $light-gray;
+  		//border-radius: 2px;
+			font-size: .9em !important;
+			padding: .4em 1em;
+			margin-top: 1em;
+			color: $gray;
+			b{
+				margin: 0 .2em;
+			}
+  	}
+
+  	.questions{
+  		dd{
+  			
+  		}
+  	}
+
+  	.face{
+  		margin-right: 1em;
+  	}
+
+  	.ques-dtl{
+  		overflow: hidden;
+  		.h5{
+  			line-height: 1.4;
+  			margin: 0;
+  			font-weight: 400;
+  			color: $black;
+  			&:hover,
+  			&:active{
+  				color: $dark-gray;
+  			}
+  		}
+  		.meta{
+  			margin: .8em 0;
+  		}
+  	}
+
+		.m-ans{
+			.ans-btn{
+				padding: 4px 1em;
+
+			}
+		}
+
+		.m-acts{
+			position: relative;
+			margin-bottom: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+
+//phone
+
+@media (max-width: $screen-xs-max) {
+	.msg-page{
+		.main{
+			max-width: none;
+
+			.questions{
+				dd{
+					.face{
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
+
+			.ques-dtl{
+
+	  		.meta{
+	  			margin-bottom: -.4em;
+	  		}
+			}
+		}
+	}
+
+}

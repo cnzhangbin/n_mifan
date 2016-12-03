@@ -1,0 +1,45 @@
+<div class="register-page page-mod container clearfix">
+	<h3>注册</h3>
+	<h4>米饭-用有趣的问答了解彼此！</h4>
+
+	<div class="self">
+		<form role="form" class="reg-form" ng-submit="onSubmit()">
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+			    <input type="email" class="form-control input-lg" placeholder="邮箱" ng-model="email" ng-blur="valid(1)">
+			  </div>
+		  </div>
+		  <div class="form-group">
+		  	<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+		    	<input type="password" class="form-control input-lg" placeholder="密码" ng-model="password" ng-blur="valid(1)">
+		  	</div>
+		  </div>
+		  <div class="form-group">
+		  	<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+		    	<input type="text" class="form-control input-lg" placeholder="昵称" ng-model="username" ng-blur="valid(1)">
+		  	</div>
+		  </div>
+		  <div class="form-group">
+		  	<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></div>
+		    	<input type="text" class="form-control input-lg" placeholder="邀请码" ng-model="invitecode" ng-blur="valid(1)">
+		  	</div>
+		  </div>
+		  <button type="submit" class="btn btn-success btn-lg" ng-class="{disabled: !isRegValid || isReging}"><i class="glyphicon"  ng-class="{'glyphicon-refresh animated infinite': isReging, 'glyphicon-send': !isReging}"></i></button>
+		</form>
+		
+		<h5>如果已有帐号，可以直接<a ng-href="#!/login"> 登录</a></h5>
+		
+	</div>
+
+
+		
+	<div class="others">
+		<h5>不想注册？可以使用社交网络直接登录</h5>
+		<snslogin>
+	</div>
+
+</div>

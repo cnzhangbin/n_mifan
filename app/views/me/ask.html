@@ -1,0 +1,13 @@
+<div class="feed-content sd-card">
+	<i uiloading></i>
+	<ul ng-show="myAsk">
+		<li class="feed-mod" ng-repeat="ask in myAsk">
+			<p class="content">
+				<a ng-href="#!/q/{{ask.askid}}" class="ques">{{ask.content}}</a>
+			</p>
+			<p class="meta">问了{{ask.ask_count}}位朋友，{{ask.answer_cout}}个回答，{{ask.addtime | ago}}</p>
+		</li>
+	</ul>
+	<i errormsg></i>
+	<i more></i>
+</div>

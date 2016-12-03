@@ -1,0 +1,32 @@
+<div class="login-page container clearfix">
+	<h3>登录</h3>
+	<h4>米饭-用有趣的问答了解彼此！</h4>
+
+	<div class="sns">
+		<h5>你可以使用社交网络登录</h5>
+		<i snslogin></i>
+	</div>
+
+	<div class="self">
+		<h5>也可以使用本站帐号登录<span> ( <a ng-href="#!/register">注册</a> 或 <a ng-href="#!/">找回密码</a> )</span></h5>
+
+		<form role="form" class="login-form form-inline" ng-submit="onSubmit()">
+			<div class="form-group" ng-class="{'has-error': error.type == 'username'}">
+				<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+			    <input type="email" class="form-control input-lg" placeholder="邮箱" ng-model="email">
+			  </div>
+		  </div>
+		  <div class="form-group" ng-class="{'has-error': error.type == 'password'}">
+		  	<div class="input-group">
+					<div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+		    	<input type="password" class="form-control input-lg" placeholder="密码" ng-model="password">
+		  	</div>
+		  </div>
+		  <button type="submit" class="btn btn-success btn-lg" ng-class="{disabled: !isLogValid || isLoging}"><i class="glyphicon"  ng-class="{'glyphicon-refresh animated infinite': isLoging, 'glyphicon-send': !isLoging}"></i></button>
+		</form>
+
+		<p class="error-msg" ng-class="{active: error.msg}">{{error.msg}}</p>
+		
+	</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="feed-content sd-card">
+	<i class="icon refresh glyphicon glyphicon-repeat pull-right" ng-click="refreshFeed()"></i>
+	<i uiloading></i>
+	<dl class="questions">
+		<dd ng-repeat="news in dataLists" class="qa-mod feed-mod hide-action" ng-include="'views/module/feed-mod.html'"></dd>
+	</dl>
+	<i errormsg></i>
+	<i more></i>
+</div>

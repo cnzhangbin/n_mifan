@@ -1,0 +1,61 @@
+<div class="header clearfix" ng-controller="headCtrl">
+
+	<div class="head-inner container">
+		<div class="login pull-right" ng-show="!user.username">
+			<span class="sm-user switch">
+				<a href="#!/login" ng-class="{active: page=='login'}" class="item">登录</a>
+				<a href="#!/register" ng-class="{active: page=='register'}" class="item">注册</a>
+			</span>
+		</div>
+
+		<div class="bg-menu pull-right hidden-xs">
+	  	<a class="remind" href="#!/notice" msg-count="{{msgCount}}">
+	  		<em ng-show="msgCount">{{msgCount}}</em><b>提醒</b>
+	  		<i class="glyphicon glyphicon-bell"></i>
+	  	</a>
+	  	<a class="search" href="#!/search"><b>找人</b><i class="glyphicon glyphicon-search"></i></a>
+	  </div>
+
+	  <div class="remind-dtl hidden-xs" ng-if="remind">
+	  	<a href="#!/notice">{{msgCount}}</a>
+	  	<i class="glyphicon glyphicon-remove close"></i>
+			<span class="caret up"></span>
+	  </div>
+		
+		<div ng-class="{open: dropdownOpen}" class="user-box pull-right dropdown" ng-show="user.username" ng-click="toggleDropdown()">
+
+			<div class="dropdown-label" data-toggle="dropdown">
+				<b class="username username-inline">{{user.username}}</b>
+			</div>
+
+			<span class="caret"></span>
+			<usermenu class="dropdown-menu" role="menu" aria-labelledby="user.username-lable">
+		</div>
+	  	
+
+		<!-- 小人，切换手机菜单栏 -->
+		<span class="glyphicon glyphicon-user user-m-menu" ng-click="toggleMMenu()"></span>
+
+    <h3 class="logo">
+    	<a ng-href="#!/home">米饭</a>
+    	<span class="glyphicon glyphicon-home icon-home" ng-hide="page=='home'"></span>
+    	<a href="#!/support" ng-if="false">
+	  		<small>
+	  			<span class="glyphicon glyphicon-thumbs-up"></span>
+	  			<span>{{supportNum}}</span>
+	  		</small>
+	  	</a>
+    </h3>
+		<div class="container" ng-click="backToTop('m')">
+			<div class="scroller">
+		    <ul class="nav nav-pills scroller-inner">
+		      <li class="item" ng-repeat="nav in navs" ng-class="{active: page === nav.page}"><a ng-href="#!/{{nav.page}}">{{nav.text}}</a></li>
+		    </ul>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- <div class="sprise">Sprise!!</div> -->

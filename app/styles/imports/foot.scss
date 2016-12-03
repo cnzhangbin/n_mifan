@@ -1,0 +1,26 @@
+.footer {
+  margin-top: 26px;
+  padding: 80px 0;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  background-color: $white;
+  p{
+  	text-align: center;
+  	a{
+  		color: #777;
+  		&:hover{
+  			color: $tone;
+  		}
+  	}
+
+    .loved{
+      //color: red;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .footer{
+    padding: 10px 0;
+  }
+}

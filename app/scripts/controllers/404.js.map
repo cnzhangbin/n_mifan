@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "404.js",
+  "sourceRoot": "",
+  "sources": [
+    "404.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA;EAEA,KAAK,CAAC,UAAN,CAAiB,UAAjB,EAA6B,SAAC,MAAD;IAE3B,MAAM,CAAC,GAAP,CAAW,oBAAX,EAAiC,SAAA;aAAG,MAAM,CAAC,KAAP,CAAa,YAAb,EAA2B,KAA3B;IAAH,CAAjC;WAGA;EAL2B,CAA7B;AAFA"
+}

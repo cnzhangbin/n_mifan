@@ -1,0 +1,10 @@
+<div class="user-list">
+	<i uiloading></i>
+	<ul class="user-list-mod flat-user-list-mod" ng-show="dataLists">
+		<li class="user-mod" ng-repeat="user in dataLists">
+			<div ng-include="'views/module/follow-user-mod.html'"></div>
+		</li>
+	</ul>
+	<i errormsg></i>
+	<i more></i>
+</div>

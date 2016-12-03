@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="mifan" ng-controller="globalCtrl" lang="zh-CN"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>米饭</title>
+    <meta name="description" content="米饭，用有趣的问答了解朋友和自己。">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- build:css({.tmp,app}) styles/mifan.css -->
+
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/background.css">
+    <!-- endbuild -->
+
+    <!-- 应用程序名字 -->
+    <meta name="apple-mobile-web-app-title" content="米饭"> 
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!-- 去除地址栏工具栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--
+    应用程序图标
+    57 * 57 iPhone iTouch (默认)
+    114 * 114 iPhone retina or iPad retina
+    72 * 72 iPad
+    http://www.cocoachina.com/gamedev/misc/2013/0521/6249.html
+    -->
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114.png">
+
+    <!-- 启动图 -->
+    <link rel="apple-touch-startup-image" href="images/apple-startup-5.png" sizes="640x1136" media="(device-width: 640px) and (device-height: 1136px)">
+  </head>
+  <body ng-class="{ios: IsIOS, android: IsAndroid, 'android-pad': IsAndroidPad, iphone: IsIPhone, ipad: IsIPad, chrome: IsChrome, weixin: IsWeixin, mobile: IsMobile, ie: IsIE, 'ie-mobile': IsIEMobile, phone: IsPhone, webapp: IsWebapp}">
+
+    <div class="root" ng-controller="rootCtrl" ng-class="{logined: isLogin, 'not-login': !isLogin, 'm-menu-open': isMMenuOpen, 'm-design-open': isMDesignOpen,'m-design-open-mask': isMDesignOpenMask, 'm-bill-open': isMBillOpen, 'm-bill-open-mask': isMBillOpenMask}">
+
+        <!-- 手机交互输入内容弹出 -->
+        <div ng-include="'views/mobile/design.html'" class="m-design"></div>
+
+        <!-- 手机菜单弹出 -->
+        <div ng-include="'views/mobile/bill.html'" class="m-bill"></div>
+
+        <!-- 手机侧边栏 -->
+        <div ng-include="'views/mobile/menu.html'" class="m-menu"></div>
+        
+        <div class="m-body" tap="scrollBody1Px()">
+            <div ng-include="'views/head.html'"></div>
+            <div class="m-wrap" id="m-wrap">
+                <!--[if lt IE 7]>
+                  <p class="browsehappy">你的浏览器版本太低，去<a href="http://browsehappy.com/">升级</a>吧！</p>
+                <![endif]-->
+                <div ng-view class="m-view" id="m-view"></div>
+                <div ng-include="'views/foot.html'"></div>
+            </div>
+
+            <!-- 遮罩 -->
+            <div class="m-menu-mask" ng-click="toggleMMenu()" ng-show="isMMenuOpen"></div>
+            <div class="m-mask"></div>
+
+
+            <!-- 返回顶部 设置hidden-xs，手机页面初始化时不显示 -->
+            <b class="back-top hidden-xs" ng-click="backToTop()" ng-if="!IsTouch"><i class="glyphicon glyphicon-arrow-up"></i></b>
+        </div>
+
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="lib/es5-shim.min.js"></script>
+    <script src="lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js({.tmp,app}) scripts/mifan.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/binnng/time.js/build/time.min.js"></script>
+    <script src="bower_components/binnng/debug.js/debug.js"></script>
+    <!--<script src="bower_components/better.js/build/better.js"></script>-->
+    <!-- endbower -->
+
+    <!-- <script src="scripts/_prefix.js"></script>-->
+    <script src="scripts/defines.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <!--<script src="scripts/_suffix.js"></script>-->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!--
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+    -->
+</body>
+</html>

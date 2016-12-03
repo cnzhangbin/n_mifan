@@ -1,0 +1,240 @@
+﻿.home-page{
+	
+	.separate-row{
+		height: 100%;
+	}
+
+	.sub-nav-wrap{
+		margin-top: 20px;
+	}
+
+	.main{
+
+		.ask-ques{
+			padding: 160px 14px 10px;
+			background-color: $dark-gray;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: top center;
+			position: relative;
+			border: none;
+			overflow: hidden;
+
+
+			&.active{
+				.toolbar,
+				.ask-ques-form{
+					opacity: 1 !important;
+				}
+
+				.toolbar{
+					.cancel{
+						cursor: pointer;
+					}
+				}
+			}
+
+			.location{
+				position: absolute;
+				top: 20px;
+				color: $white;
+				@include text-shadow();
+				padding-left: 4px;
+			}
+
+
+			
+			textarea,
+			.login-tip{
+				height: 6em;
+				display: block;
+				border-radius: 0;
+				border: none;
+				//box-shadow: inset 0 0 4px rgba(0, 0, 0, .1);
+				background-color: $white;
+			}
+
+			.login-tip{
+				line-height: 2.4em;
+				text-indent: .8em;
+				margin: 0;
+				color: #666;
+			}
+		}
+			
+		.ask-ques-form{
+			opacity: 1;
+			position: relative;
+			@include transition(all, .2s);
+			border-radius: 2px;
+			overflow: hidden;
+			border: 1px $light-gray solid;
+
+			.arrow{
+				color: $white;
+				position: absolute;
+				font-size: 24px;
+				left: 20px;
+				bottom: -18px;
+			}
+
+			.avatar{
+				display: block;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-size: cover;
+				position: absolute;
+				left: 8px;
+				bottom: -62px;
+				border: 2px $white solid;
+			}
+			
+			.toolbar{
+				background-color: darken($white, 6%);
+				border-top: 1px $light-gray solid;
+				padding: 8px;
+				opacity: 1;
+				@include transition(all, .2s);
+
+				.cancel{
+					color: $white;
+					@include text-shadow();
+					padding: 0 10px;
+					display: inline-block;
+					cursor: default;
+				}
+
+				button[type="submit"]{
+					padding-left: 20px;
+					padding-right: 24px;
+
+					//height: 5em;
+					//border-top-left-radius: 0;
+					//border-bottom-left-radius: 0;
+				}
+			}
+		}
+
+
+		
+	}
+
+	.separate{
+		background: #e5e5e5;
+		width: 1px;
+		margin: 0 auto;
+		height: 100%;
+	}
+
+
+
+}
+
+
+
+
+// pad
+
+@media (max-width: $screen-sm-max) and (min-width: $screen-xs-max) {
+	.home-page{
+		.main{
+			.ask-ques{
+				padding-top: 120px;
+			}
+		}
+	}
+}
+
+
+//phone
+
+@media (max-width: $screen-xs-max) {
+	.home-page{
+
+  	.sub-nav-wrap{
+  		margin-top: 10px;
+  	}
+
+		.main{
+			max-width: none;
+			.ask-ques-form{
+				min-height: 26px;
+				border: none;
+				.avatar{
+					width: 38px;
+					height: 38px;
+					bottom: -20px;
+					left: 4px;
+					position: static;
+					display: inline-block;
+				}
+			}
+			.ask-ques{
+				padding-bottom: 14px !important;
+				.login-tip{
+					height: auto;
+					background: transparent;
+					text-indent: 0;
+					a{
+						color: $white;
+					}
+				}
+			}
+
+			.nav{
+				li{
+					width: 25%;
+				}
+			}
+
+			.feed-content{
+				padding: 6px;
+			}
+
+			.news{
+
+				.questions{
+					.meta{	
+						.act-left{
+							margin-top: 10px !important;
+						}
+					}
+				}
+			}
+
+			.comment{
+				.cmt-form{
+					.btn{
+
+					}
+				}
+			}
+		}
+
+		
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.home-page{
+		.main{
+			
+			.ask-ques{
+				padding-top: 100px;
+			}
+		}
+	}
+}
+
+
+// 登录了
+.logined{
+	.home-page{
+		.main{
+			.ask-ques{
+				padding-bottom: 20px;
+			}
+		}
+	}
+}

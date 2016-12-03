@@ -1,0 +1,11 @@
+<div class="side sd-card">
+	<div class="side-mod">
+		<h5>最新加入米饭的<i class="icon refresh glyphicon glyphicon-repeat" ng-click="refreshUsers()"></i></h5>
+		<ul class="user-list-mod">
+			<li class="user-mod" ng-repeat="user in userLists">
+				<div ng-include="'views/module/follow-user-mod.html'"></div>
+			</li>
+		</ul>
+	</div>
+</div>
+

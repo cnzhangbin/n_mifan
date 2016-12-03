@@ -1,0 +1,441 @@
+﻿$header-height: 50px;
+
+.header{
+	border-bottom: 1px solid #ccc;
+	height: $header-height;
+	margin-top: 0;
+  margin-bottom: 0;
+  background: $white;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	top: 0;
+	z-index: 88;
+	opacity: .95;
+	.container{
+  	position: relative;
+  	padding: 0;
+  }
+  .logo,
+  .nav{
+  	display: inline-block;
+  }
+	.logo{
+		font-size: 1.4em;
+		margin: 0;
+		//background-color: $tone;
+		//width: 100px;
+		//height: 100px;
+		line-height: $header-height;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		z-index: 88;
+	  background-position: 10px center;
+		//@include box-shadow(0, 0, 10px);
+    a{
+			color: $tone;
+			display: block;
+			height: 100%;
+			width: 90px;
+			position: relative;
+			z-index: 8;
+    	&:hover,
+    	&:active,
+    	&:visited{
+    		text-decoration: none;
+				color: $tone;
+    	}
+    }
+  	.icon-home{
+  		font-size: 12px;
+  		position: absolute;
+  		top: 10px;
+  		right: 0;
+  		color: $white;
+  		background-color: $light-gray;
+  		padding: 4px 5px 4px 3px;
+  		border-radius: 2px;
+			text-indent: 0;
+
+  		&:after{
+  			content: "";
+  			border: 4px solid transparent;
+  			border-right-color: $light-gray;
+  			position: absolute;
+  			top: 6px;
+  			left: -8px;
+  		}
+  	}
+    small{
+    	.glyphicon{
+    		top: 2px;
+    	}
+			margin-left: .2em;
+			font-size: .4em;
+    }
+    &:after{
+    	content: "";
+			display: block;
+			position: absolute;
+			right: -10px;
+			bottom: 0;
+			z-index: 1;
+    }
+	}
+
+	.nav{
+		vertical-align: bottom;
+		margin-left: 100px;
+		position: relative;
+		margin-top: 10px;
+
+		li{
+			margin: 0 6px;
+			a{
+				padding: 6px 1em;
+			}
+			a,
+			a:visited{
+				color: $gray;
+			}
+			a:hover,
+			a:active,
+			a:focus{
+				color: $tone;
+				background-color: darken($white, 4%);
+			}
+
+			&.active{
+				a{
+					background-color: $tone;
+					color: $white;
+					cursor: default;
+				}
+			}
+		}
+		
+		// 导航中小三角
+		// 在移动设备（Mobile）和chrome浏览器中设置transform偏移 -webkit
+		// 在其他情况中设置left值偏移
+		// 动画中transform性能优于left
+		// .arrow{
+		// 	color: $bg;
+		// 	font-size: 26px;
+		// 	position: absolute;
+		// 	left: 20px;
+		// 	top: 45px;
+		// 	left: 0;
+		// 	border-color: transparent transparent $bg;
+		// 	border-style: solid;
+		// 	border-width: 0 6px 6px;
+		// 	display: none !important;
+		// 	@include transition(all, .3s, $easeOutCirc);
+		// 	@include box-shadow(0, 0, 1px, rgba(#000, .2), inset);
+		// }
+	}
+
+	.login,
+	.bg-menu,
+	.user-box{
+		margin-right: 1.4em;
+		position: relative;
+		z-index: 88;
+	}
+
+	.user-box{
+		margin-right: 0;
+	}
+
+	.bg-menu{
+		margin-right: 4px;
+		a{
+			cursor: pointer;
+			padding-right: .4em;
+			padding-left: .4em;
+			display: inline-block;
+			line-height: $header-height;
+			position: relative;
+			color: #333;
+			b{
+				display: none;
+			}
+
+			em{
+				position: absolute;
+				top: 8px;
+				right: 0;
+				color: $red;
+				line-height: 1;
+				font-weight: 700;
+				width: 6px;
+				height: 6px;
+				font-size: 1px;
+				text-indent: -99em;
+				overflow: hidden;
+				background-color: $red;
+				border-radius: 99px;
+				display: none;
+			}
+
+			&:hover{
+				color: #111;
+			}
+		}
+		
+		.remind{
+			color: $red;
+			&:hover{
+				color: darken($red, 5%);
+			}
+		}
+		.remind[msg-count="0"] {
+			color: #333;
+		}
+	}
+
+	.remind-dtl{
+		position: absolute;
+		right: 14px;
+		top: 42px;
+		background-color: $light-gray;
+		padding: .4em .6em .4em 1em;
+		border-radius: 2px;
+		font-size: .9em;
+		.caret{
+			color: $light-gray;
+			position: absolute;
+			top: -4px;
+			right: 28px;
+		}
+		.close{
+			margin-left: 1em;
+			font-size: .9em;
+		}
+		a{
+			color: $link-color;
+			&:hover,
+			&:active{
+				color: darken($link-color, 10%);
+			}
+		}
+	}
+
+	.login{
+		line-height: $header-height;
+		.sm-user{
+			
+		}
+
+		.switch{
+			.item{
+				padding-top: 0;
+				padding-bottom: 0;
+				color: #428bca;
+				&:hover{
+					color: #2a6496;
+				}
+				&.active{
+					color: $gray;
+				}
+			}
+		}
+	}
+
+	.user-box{
+		cursor: pointer;
+		margin-right: 1.4em;
+		line-height: $header-height;
+		&:hover{
+			color: #111;
+		}
+
+		.caret{
+			@include transition(all, 200ms, ease-in);
+			position: relative;
+			top: -2px;
+		}
+
+		.dropdown-label{
+			-webkit-user-select: none;
+			user-select: none;
+			margin: 0;
+			display: inline-block;
+		}
+
+		.username{
+			font-weight: 400;
+			line-height: 1;
+		}
+
+		.dropdown-menu{
+			margin-top: 0;
+			opacity: 0;
+			@include transition(all, .3s);
+			li{
+				padding: .3em;
+				.glyphicon{
+					margin-right: .4em;
+				}
+			}
+		}
+
+		&.open{
+			.dropdown-menu{
+				margin-top: .3em;
+				opacity: 1;
+
+			}
+			.caret{
+				@include rotate(180);
+			}
+		}
+	}
+
+
+	.user-m-menu{
+		font-size: 1.2em;
+		display: none;
+		padding: 0 .5em;
+		position: absolute;
+		right: .6em;
+		top: 0;
+		z-index: 8;
+	}
+
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	height: 1px;
+	// 	background-color: $light-gray;
+	// }
+
+
+	+ .sprise{
+		font-weight: 700;
+		color: $tone;
+		position: absolute;
+		left: 50%;
+		top: 100px;
+		z-index: 1;
+		margin-left: -10px;
+		display: none;
+	}
+
+	
+}
+
+@media (max-width: $screen-sm-max) {
+	.header{
+	  
+	}
+}
+
+
+// phone
+
+@media (max-width: $screen-xs-max) {
+	.header{
+		background-color: $white;
+		line-height: 40px;
+		position: absolute;
+		border-bottom: 1px solid $dark-tone;
+		height: auto;
+		.container{
+			background: #fff;
+	  }
+
+	  .logo{
+	  	font-size: 1em;
+	  	line-height: 40px;
+	  	a{
+	  		padding: 0 2em 0 1.2em;
+	  	}
+	  	.icon-home{
+	  		top: 10px;
+		  }
+	  }
+
+	  .nav{
+	  	margin-left: 0;
+	  	background-color: $tone;
+	  	margin-top: 40px;
+	  	display: block;
+	  	padding: 0 .4em;
+			border-top: 1px solid $dark-tone;
+			box-shadow: inset 0 -1px 1px rgba(0 ,0 ,0 ,.1), inset 0 1px 1px rgba(0 ,0 ,0 ,.1);
+	  	li{
+	  		margin: 0 2px;
+	  		a{
+	  			padding: 0 .4em;
+	  			color: $white !important;
+	  			margin: 8px 0;
+					padding: 0 10px;
+					line-height: 2.2;
+	  		}
+
+				a:active,
+				a:focus{
+					background-color: $dark-tone;
+				}
+
+				a:hover{
+					background: transparent;
+				}
+
+	  		&.active{
+	  			a{
+						background-color: $dark-tone;
+	  			}
+	  		}
+	  	}
+	  }
+
+	  .login,
+	  .user-box{
+			display: none;
+	  }
+
+
+  	.user-m-menu{
+  		display: block;
+  		line-height: 30px;
+  		color: $gray;
+  		
+  		border-radius: 2px;
+  		margin-top: 5px;
+
+  		//&:hover,
+  		&:active{
+  			background-color: $light-gray;
+  		}
+  	}
+
+  	+ .sprise{
+  		display: block;
+  	}
+	}
+}
+
+// .not-login{
+// 	.header{
+// 		border: none;
+// 		.nav{
+// 			display: none;
+// 		}
+// 	}
+// }
+
+
+//根据设备设置不同的CSS
+// .chrome,
+// .mobile{
+// 	.header{
+// 		.nav{
+// 			.arrow{
+// 				left: 0 !important;
+// 			}
+// 		}
+// 	}
+// }

@@ -1,0 +1,19 @@
+<div class="m-menu-in" ng-controller="mMenuCtrl">
+
+	<!-- 未登录 -->
+	<div class="log-reg" ng-show="!user.username">
+		<a ng-href="#!/home" ng-click="toggleMMenu()" class="logo">米饭</a>
+		<div class="link switch">
+			<a ng-href="#!/login" ng-click="toggleMMenu()" class="log item" ng-class="{active: page=='login'}">登录</a>
+			<a ng-href="#!/register" ng-click="toggleMMenu()" class="reg item" ng-class="{active: page=='register'}">注册</a>
+		</div>
+	</div>
+
+	<!-- 登录 -->
+	<div class="user" ng-show="user.username">
+		<b class="user-avatar face" ng-style="{'background-image': 'url(' + user.face_120 + ')'}">{{user.username}}</b>
+		<p class="username">{{user.username}}</p>
+		<usermenu class="user-menu" ng-click="toggleMMenu()">
+	</div>
+	
+</div>

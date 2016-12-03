@@ -1,0 +1,81 @@
+.profile{
+
+	.blk{
+		margin-top: .8em;
+	}
+	.blk-sep{
+		border-top: 1px dashed rgba(#000, .1);
+		display: block;
+		margin: 18px 0;
+	}
+	.cover{
+		height: 145px;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.face{
+		margin: -100px auto 10px;
+		display: block;
+		border: 6px #fefefe solid;
+	}
+
+	.bio{
+		text-align: center;
+		padding: 0 1em 1em;
+	}
+
+	.username{
+		display: block;
+		text-align: center;
+		font-size: 1.3em;
+	}
+
+	.intro{
+		color: $gray;
+		font-size: .9em;
+		margin-top: .4em;
+	}
+
+	.sns{
+		i{
+			margin: 0 2px -6px 0;
+		}
+		span{
+			display: inline-block;
+			height: 25px;
+			color: $dark-gray;
+			font-size: .9em;
+			margin-right: 4px;
+		}
+	}
+
+	.fans{
+		font-size: .9em;
+		span{
+			margin-right: .6em;
+		}
+		a{
+			font-size: 1.2em;
+		}
+	}
+
+	.follow{
+		.btn{
+			min-width: 86px;
+		}
+	}
+
+	.ask-him-box{
+		.btn{
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+
+	.addtime{
+		color: $gray;
+	}
+
+
+}

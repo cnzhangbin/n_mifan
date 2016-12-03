@@ -1,0 +1,129 @@
+
+.feed-content{
+	background-color: $cardBg;
+	padding: 20px;
+	position: relative;
+}
+
+.feed-wrap{
+	margin-top: 26px;
+}
+
+.feed-mod{
+	border-bottom: 1px #ddd dashed;
+	padding: 1em 0;
+
+	background-color: transparent;
+	&:last-child{
+		border-bottom: none;
+	}
+	
+	a{
+		color: $black;
+		margin: 0 .2em;
+		&:hover,
+		&:active{
+			color: $tone;
+		}
+	}
+	
+	.face,
+	.avatar{
+		margin-right: .8em;
+		float: left;
+	}
+
+	.avatars{
+		.avatar{
+			display: block;
+			float: none;
+			margin-right: 0;
+		}
+		margin-right: .8em;
+		.asker{
+			width: 28px;
+			height: 28px;
+		}
+		.answerer{
+			width: 35px;
+			height: 35px;
+			margin: -10px 0 0 12px;
+		}
+	}
+	.contents{
+		overflow:hidden;
+	}
+
+
+
+	.ques{
+		overflow: hidden;
+		display: block;
+		line-height: 1.5;
+	}
+
+
+
+
+	.meta{
+		color: #999;
+	  font-size: .9em;
+		margin: 0;
+		margin-top: .6em;
+	  a{
+	    color: lighten(#000, 60%) !important;
+	  }
+	}
+}
+
+.reply-feed-mod{
+	.content{
+		margin-top: 1em;
+		overflow: hidden;
+	}
+	.re-lead{
+		color: #666;
+		a,
+		span{
+			margin: 0 .2em;
+			color: $black;			
+		}
+	}
+
+	+ .reply-content{
+		border-bottom: 1px #ddd dashed;
+		overflow: hidden;
+		padding-bottom: 1em;
+		.face{
+			float: left;
+			margin: 0 1em 0 2.6em;
+		}
+		p{
+			overflow: hidden;
+		}
+	}
+}
+
+.love-feed-mod{
+	//@extend .reply-mod;
+
+	.loveme-tip{
+		margin-top: .6em;
+	}
+}
+
+//phone
+
+@media (max-width: $screen-xs-max) {
+
+	.feed-wrap{
+		margin-top: 0px;
+	}
+}
+
+@media (max-width: $screen-xs-max) and (min-width: $screen-xs) {
+
+	.feed-wrap{
+		margin-top: 10px;
+	}
+}

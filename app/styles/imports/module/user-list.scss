@@ -1,0 +1,20 @@
+.user-list-mod{
+	
+	li{
+		border-bottom: 1px dashed $light-gray;
+		overflow: hidden;
+
+		&:last-child{
+			border: none;
+		}
+
+	}
+}
+
+.flat-user-list-mod{
+	li{
+		.btn{
+			float: right;
+		}
+	}
+}

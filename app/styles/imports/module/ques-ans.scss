@@ -1,0 +1,45 @@
+.qa-mod{
+
+	&:hover{
+		//background: #effaff;
+	}
+
+	.h5{
+		margin: 0 0 .6em 0;
+		line-height: 1.4;
+		font-weight: 400;
+		a{
+			color: #666;
+			&:hover{
+				color: #000;
+			}
+		}
+	}
+
+	.lead{
+		font-size: 1.1em;
+		margin-bottom: 0;
+	}
+
+
+	&.hide-action{
+		.actions{
+			display: none;
+		}
+	}
+
+}
+
+@media (max-width: $screen-xs-max) {
+	.qa-mod{
+
+		.avatars{
+			margin-right: .6em;
+			.asker{
+			}
+			.answerer{
+				margin: -10px 0 0 8px;
+			}
+		}
+	}
+}
